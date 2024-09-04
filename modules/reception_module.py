@@ -87,7 +87,7 @@ def get_production_status():
         print(f"For {v}, press {k}")
     while True:  
             selection = input("\nInput Selection: ")
-            print("Using tutorial, status defaulted to Dummy")
+            print("\nUsing tutorial, status defaulted to Dummy")
             selection = 9
             break     
        
