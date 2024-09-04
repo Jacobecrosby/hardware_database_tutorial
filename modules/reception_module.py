@@ -102,7 +102,7 @@ def get_N2():
     This gives the user a selection for both component placement and # modules.
     Returns N2
     '''
-    print("Select Component Placement.")
+    print("\nSelect Component Placement.")
     placement_options = ["BARREL", "RING"]
     for k, v in enumerate(placement_options):
         print(f"For {v}, press {k}")
