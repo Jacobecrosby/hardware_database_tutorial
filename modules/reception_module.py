@@ -85,21 +85,12 @@ def get_production_status():
         if k == 2:
             k = 9
         print(f"For {v}, press {k}")
-    while True:
-        try:  
+    while True:  
             selection = input("\nInput Selection: ")
             print("Using tutorial, status defaulted to Dummy")
             selection = 9
-        
-        except(ValueError,IndexError):
-            print("Invalid Input. Try again.")
-            counter = counter +1
-            if counter %3 ==0:
-                print("")
-                for k, v in enumerate(status_list):
-                    if k == 2:
-                          k = 9
-                    print(f"For {v}, press {k}")
+            break     
+       
 
 
     #print(f"Selected {status}\n")
