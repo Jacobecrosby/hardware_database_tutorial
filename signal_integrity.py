@@ -1,6 +1,6 @@
 from modules.db_utils import authenticate_user_itkdb, authenticate_user_mongodb
 from modules.reception_module import enter_serial_numbers, get_comp_info, get_template,enquiry,update_test_type,upload_attachments
-from modules.mongo_db import upload_results_locally
+#from modules.mongo_db import upload_results_locally
 import itkdb
 import shutil
 import argparse
@@ -181,7 +181,7 @@ def upload_signal_integrity_test(client,template,meta_data,values,images):
 
 def main():
     itkdb_client = authenticate_user_itkdb()
-    mongodb_client = authenticate_user_mongodb()
+    #mongodb_client = authenticate_user_mongodb()
     if not enquiry(args["results"]):
       print("No folder argument included! Exiting...")
       exit()
@@ -194,7 +194,7 @@ def main():
     update_test_type(itkdb_client,meta_data,test_type)
     test_results = upload_signal_integrity_test(itkdb_client,template,meta_data,values,images)
     upload_attachments(itkdb_client,args,meta_data,test_type)
-    upload_results_locally(mongodb_client,test_results,serial_number,test_type)
+    #upload_results_locally(mongodb_client,test_results,serial_number,test_type)
 
 
 if __name__ == '__main__':

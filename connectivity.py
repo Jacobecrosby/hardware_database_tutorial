@@ -1,6 +1,6 @@
 from modules.db_utils import authenticate_user_itkdb, authenticate_user_mongodb
 from modules.reception_module import enter_serial_numbers, get_comp_info, get_template,enquiry,update_test_type
-from modules.mongo_db import upload_results_locally
+#from modules.mongo_db import upload_results_locally
 import itkdb
 import shutil
 import argparse
@@ -136,7 +136,7 @@ def upload_connectivity_test(client,template,meta_data,results):
 
 def main():
     itkdb_client = authenticate_user_itkdb()
-    mongodb_client = authenticate_user_mongodb()
+    #mongodb_client = authenticate_user_mongodb()
     if not enquiry(args["csv"]):
       print("No CSV included! Exiting...")
       exit()
@@ -148,7 +148,7 @@ def main():
     template = get_template(itkdb_client,meta_data,test_type)
     update_test_type(itkdb_client,meta_data,test_type)
     test_results = upload_connectivity_test(itkdb_client,template,meta_data,result_list)
-    upload_results_locally(mongodb_client,test_results,serial_number,test_type)
+    #upload_results_locally(mongodb_client,test_results,serial_number,test_type)
     
 
 if __name__ == '__main__':

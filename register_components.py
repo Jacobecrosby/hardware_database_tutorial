@@ -1,6 +1,6 @@
 from modules.db_utils import authenticate_user_itkdb, authenticate_user_mongodb
 from modules.reception_module import get_type, get_latest_serial, get_code_and_function, get_flavor, get_N2, get_component_type, get_production_status
-from modules.mongo_db import insert_property_names
+#from modules.mongo_db import insert_property_names
 import datetime
 import json
 
@@ -156,10 +156,10 @@ def get_data(itkdb_client):
 
 def main():
     itkdb_client = authenticate_user_itkdb()
-    mongodb_client = authenticate_user_mongodb()
+    #mongodb_client = authenticate_user_mongodb()
     meta_data = get_data(itkdb_client)
     component = upload_component(itkdb_client,meta_data[0],meta_data[1])
-    upload_component_local(mongodb_client,component)
+    #upload_component_local(mongodb_client,component)
 
 if __name__ == '__main__':
   main()

@@ -186,10 +186,10 @@ def get_serials_to_delete(client):
     
 def main():
     itkdb_client = authenticate_user_itkdb()
-    mongodb_client = authenticate_user_mongodb()
+    #mongodb_client = authenticate_user_mongodb()
     serial_number = get_serials_to_delete(itkdb_client)
     remove_component(itkdb_client,serial_number)
-    remove_component_locally(mongodb_client,serial_number)
+    #remove_component_locally(mongodb_client,serial_number)
 
 
 
