@@ -554,6 +554,9 @@ def get_latest_serial(client,xxyy, production_status, N2, flavor, register):
     existing_osu_components = []
     existing_components_flavor = []
     for i in existing_components:
+        ''' For deleted components '''
+        if i['state'] == 'deleted':
+            continue
         code = str(i["institution"]["code"])
         if code == str("OSU"):
             existing_osu_components.append(i)
