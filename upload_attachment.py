@@ -68,7 +68,7 @@ def upload_additional_attachments(client,attch,meta_data,test_type):
 
 def main():
     itkdb_client = authenticate_user_itkdb()
-    mongodb_client = authenticate_user_mongodb()
+    #mongodb_client = authenticate_user_mongodb()
     single = True
     serial_number = enter_serial_numbers(single)
     meta_data = get_comp_info(itkdb_client,serial_number)
