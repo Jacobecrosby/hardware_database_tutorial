@@ -196,7 +196,7 @@ def get_type(xxyy, N2):
             except (ValueError, IndexError):
                 print("Invalid Input. Try again.")
         print(f"Selected {r0}\n")
-        comp_type == r0
+        comp_type = r0
     elif str(code) == "DP" and N2 == 2:
         print("Select Component which R0 type.")
         r0t_options = ["R0_DATA_FLEX","R05_DATA_FLEX"]
@@ -210,7 +210,7 @@ def get_type(xxyy, N2):
             except (ValueError, IndexError):
                 print("Invalid Input. Try again.")
         print(f"Selected {r0t}\n")
-        comp_type == r0t
+        comp_type = r0t
     elif str(code) == "PG" and N2 == 4:
         comp_type = "TYPE0_TO_PP0"
     else:
