@@ -522,7 +522,7 @@ def get_existing_serials(client,partial_serial,xxyy,N2,flavor):
             pass
     return existing_serials
     
-def get_latest_serial(client,xxyy, production_status, N2, flavor, register): 
+def get_latest_serial(client,xxyy, production_status, N2, flavor, register,comp_type): 
     '''
     Checks data base for existing components with the same first 10 digits.
     Finds largest existing serial number and increments it by 1.
@@ -534,7 +534,6 @@ def get_latest_serial(client,xxyy, production_status, N2, flavor, register):
     subproject1 = xxyy[0:2]
     subproject2 = xxyy[2:4]
 
-    comp_type = get_type(xxyy,N2)
     print("The component type you're entering is:", comp_type)
     print("Searching production database for this type...")
     search_filter = {
