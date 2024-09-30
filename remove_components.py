@@ -18,7 +18,7 @@ def remove_component(client, serialNumber):
                 del_ans = input("\nReason: ")
                 if ans == "yes" or ans == "y":
                     del_filter = {
-                        "component": serialNumber,
+                        "component": component['id'],
                         "reason": del_ans
                     }
                     client.post("deleteComponent",json=del_filter)
@@ -50,9 +50,9 @@ def remove_component(client, serialNumber):
                     print("What is the reason for deletion?")
                     del_reason = input("\nReason: ")
                     delete_filter = []
-                    for serial in serialNumber:
+                    for comp in components:
                         delete_filter.append({
-                            "component": serial,
+                            "component": comp['id'],
                             "reason": del_reason
                         }) 
                     for filter in delete_filter:

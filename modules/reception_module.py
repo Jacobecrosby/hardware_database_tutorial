@@ -30,6 +30,21 @@ def enquiry(list):
     else:
         return 1
 
+def check_file_size(args):
+    eos = False
+    img_str = ["png","jpg","jpeg","pdf","eps","gif"]
+    for arg_key, value in args.items():
+        key = arg_key
+    for arg in args[key]:
+        size = os.path.getsize(arg)
+        for st in img_str:
+            if st in arg:
+                eos = True
+        if size > 64000:
+            eos = True
+    
+    return eos
+
 def get_component_type():
     comp_names = ["DATA FLEX", "POWER FLEX", "RING", "Z-RAY", "PPO"]
     print("Select a component type.\n")
