@@ -96,7 +96,7 @@ def upload_reception_results(client,meta_data,template):
     
 def main():
     eos = check_file_size(args)
-    itkdb_client = authenticate_user_itkdb()
+    itkdb_client = authenticate_user_itkdb(eos)
     #mongodb_client = authenticate_user_mongodb()
     single = True
     test_type = "VISUAL_INSPECTION"
